@@ -1,6 +1,7 @@
 # Transaction Fraud Analysis Command Center
 
-![Main Dashboard](main_dashboard.png)
+<img width="1163" height="652" alt="Screenshot 2026-11-10 002447" src="https://github.com/user-attachments/assets/68bfb7b8-4a5a-4918-820a-42f14b758598" />
+
 
 ## Executive Summary
 A major financial institution is experiencing an unacceptably high volume of credit card transaction fraud, resulting in severe financial losses and compromised customer trust. The objective of this project is to engineer an interactive, analytical command center that allows risk management teams to instantly isolate fraudulent anomalies across millions of transactions by geography, merchant category, and time-series trends to deploy targeted security interventions.
@@ -12,6 +13,7 @@ A major financial institution is experiencing an unacceptably high volume of cre
   * `fact_transactions`: Core transactional data containing foreign keys and numeric metrics (amounts, fraud flags).
   * `dim_customer`: Demographic and geographic dimensions for cardholders.
   * `dim_merchant`: Categorical data for transaction locations and industry types.
+  * `dim_calendar`: Centralized Date dimension generated via DAX to optimize the VertiPaq engine, replacing the heavy Auto Date/Time default feature and enabling dynamic Time-Intelligence calculations across the model.
 * **Time Intelligence Optimization:** Disabled hidden auto-date/time hierarchies to enforce a strict, continuous date timeline for high-performance timeline slicers without bloating the file size.
 
 ## Key DAX Metrics
@@ -22,7 +24,8 @@ Developed custom DAX measures to dynamically calculate risk across any filtered 
 ## Advanced UI/UX & Analytical Features
 * **Custom Report Page Tooltips:** Replaced default text tooltips with dynamic, embedded mini-dashboards. Hovering over a state on the primary geographic map instantly triggers a Top N filtered bar chart exposing the 10 highest-risk cities within that specific state.
 
-![Custom Tooltip Feature](tooltip_feature.png)
+<img width="1162" height="656" alt="Screenshot 2026-11-10 002827" src="https://github.com/user-attachments/assets/78b6826f-55d7-48e0-8a68-69636ea192d8" />
+
 
 * **Enterprise Interface:** Designed a high-contrast, dark-mode visual interface with strict grid alignment to minimize cognitive load for analysts.
 * **Cross-Filtering Engine:** Integrated synchronized slicers (Geography, Industry Category, and Date Range) to allow instantaneous, multi-variable drill-downs.
